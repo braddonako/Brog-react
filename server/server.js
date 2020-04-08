@@ -3,8 +3,9 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 const app = express();
-const mongoose = require('mongoose');
 require('dotenv').config();
+const mongoose = require('mongoose');
+
 
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DATABASE);
