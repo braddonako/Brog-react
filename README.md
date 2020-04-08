@@ -3,3 +3,7 @@
 Npm install --
 Express
 Nodemon
+body-parser
+cookie-parser
+bcrypt
+jwt -jsonwebtoken
