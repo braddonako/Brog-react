@@ -8,7 +8,10 @@ const mongoose = require('mongoose');
 
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASE);
+mongoose.connect('mongodb://localhost:27017/brog', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json());
@@ -17,6 +20,12 @@ app.use(cookieParser());
 ////////////
 // MODELS //
 ////////////
+
+// USERS
+
+app.get('/api/users/register', (req,res)=>{
+    res.status(200)
+})
 
 app.get('/somedata', (req, res) => {
     res.send('a haaaa ')
