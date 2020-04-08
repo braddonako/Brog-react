@@ -7,3 +7,4 @@ body-parser
 cookie-parser
 bcrypt
 jwt -jsonwebtoken
+dotenv
