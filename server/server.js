@@ -6,8 +6,8 @@ const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-// mongoose.Promise = global.Promise;
-// mongoose.connect(process.env.DATABASE);
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.DATABASE);
 
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json());
