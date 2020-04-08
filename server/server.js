@@ -17,6 +17,7 @@ app.get('/somedata', (req, res) => {
     res.send('a haaaa ')
 });
 
+const port = process.env.PORT || 3000;
 
 app.listen(3000, ()=> {
     console.log('heyaaa I am listening, a ha haaa')

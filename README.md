@@ -8,3 +8,4 @@ cookie-parser
 bcrypt
 jwt -jsonwebtoken
 dotenv
+mongoose
