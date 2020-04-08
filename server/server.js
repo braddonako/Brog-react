@@ -13,7 +13,7 @@ mongoose.connect(process.env.DATABASE, {
     useUnifiedTopology: true
 });
 
-console.log(process.env.DATABASE, '<-- here is the database')
+// console.log(process.env.DATABASE, '<-- here is the database ahaha')
 
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json());
@@ -24,11 +24,12 @@ app.use(cookieParser());
 ////////////
 
 // USERS
-
 app.get('/api/users/register', (req,res)=>{
     res.status(200)
 })
 
+
+// first route to check if its working
 app.get('/somedata', (req, res) => {
     res.send('a haaaa ')
 });
