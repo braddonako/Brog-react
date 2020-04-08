@@ -3,15 +3,17 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 const app = express();
-require('dotenv').config();
+
 const mongoose = require('mongoose');
+require('dotenv').config();
 
+// mongoose.Promise = global.Promise;
+// mongoose.connect(process.env.DATABASE, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// });
 
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/brog', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+console.log(process.env.DATABASE, '<-- here is the database')
 
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json());
