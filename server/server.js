@@ -15,13 +15,15 @@ mongoose.connect(process.env.DATABASE, {
 
 // console.log(process.env.DATABASE, '<-- here is the database ahaha')
 
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
 ////////////
 // MODELS //
 ////////////
+
+const { User } = require('./models/user')
 
 // USERS
 app.get('/api/users/register', (req,res)=>{
