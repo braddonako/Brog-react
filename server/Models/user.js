@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
 const SALT_I = 10; // We are salting the password
 
-require('dotenv').config()
+// require('dotenv').config()
 
 const userSchema  = mongoose.Schema({
     email:{
@@ -39,6 +39,9 @@ const userSchema  = mongoose.Schema({
         type: String
     }
 })
+
+// telling the server to hash the password before data is sent
+userSchema.pre()
 
 const User = mongoose.model('User', userSchema)
 

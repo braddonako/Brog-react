@@ -10,7 +10,9 @@ require('dotenv').config();
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
 });
 
 // console.log(process.env.DATABASE, '<-- here is the database ahaha')
@@ -23,18 +25,22 @@ app.use(cookieParser());
 // MODELS //
 ////////////
 
-const { User } = require('./models/user')
+const { User } = require('./Models/user')
 
 // USERS
-app.get('/api/users/register', (req,res)=>{
-    res.status(200)
+app.post('/api/users/register', (req,res)=>{
+    const user = new User(req.body);
+    
+    user.save((err,doc) => {
+        if(err) return res.json({success: false,err});
+        res.status(200).json({
+            success: true,
+            userdata: doc
+        })
+        console.log(userdata)
+    })
 })
 
-
-// first route to check if its working
-app.get('/somedata', (req, res) => {
-    res.send('a haaaa ')
-});
 
 const port = process.env.PORT || 3000;
 
