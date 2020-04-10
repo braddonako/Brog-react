@@ -41,7 +41,20 @@ const userSchema  = mongoose.Schema({
 })
 
 // telling the server to hash the password before data is sent
-userSchema.pre()
+userSchema.pre('save', function(next){
+    let user = this; // using es5 for this function
+
+    //encypting password
+    bcrypt.genSalt(SALT_I, function(err, salt){
+        if (err) return next(err); // if there is an error, move forward
+
+        bcrypt.hash(user.password, salt, function(err, hash){
+            if (err) return next(err);
+            user.password = hash;
+            next();
+        })
+    })
+})
 
 const User = mongoose.model('User', userSchema)
 

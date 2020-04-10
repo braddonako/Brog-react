@@ -37,7 +37,6 @@ app.post('/api/users/register', (req,res)=>{
             success: true,
             userdata: doc
         })
-        console.log(userdata)
     })
 })
 
