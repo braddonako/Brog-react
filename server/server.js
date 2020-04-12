@@ -40,7 +40,6 @@ app.post('/api/users/register', (req,res)=>{
     })
 })
 
-
 const port = process.env.PORT || 3000;
 
 app.listen(3000, ()=> {

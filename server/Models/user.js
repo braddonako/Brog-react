@@ -45,6 +45,7 @@ userSchema.pre('save', function(next){
     let user = this; // using es5 for this function
 
     //encypting password
+    if (user.isModified('password')){
     bcrypt.genSalt(SALT_I, function(err, salt){
         if (err) return next(err); // if there is an error, move forward
 
@@ -54,6 +55,9 @@ userSchema.pre('save', function(next){
             next();
         })
     })
+  } else {
+      next();
+  }
 })
 
 const User = mongoose.model('User', userSchema)
