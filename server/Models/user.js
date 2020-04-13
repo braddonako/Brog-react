@@ -60,10 +60,23 @@ userSchema.pre('save', function(next){
   }
 })
 
+
+// using bcrypt to compare the password to the current user trying to log in
 userSchema.methods.comparePassword = function(candidatePassword, cb){
     bcrypt,compare(candidatePassword, this.password, function(err, isMatch){
         if(err) return cb(err);
         cb(null, isMatch);
+    })
+}
+
+userSchema.methods.generateToken = function(cb) {
+    let user = this;
+    let token = jwt.sign(user._id.toHexString(), process.env.SECRET)
+
+    user.token = token;
+    user.save(function(err, user){
+        if (err) return cb(err)
+        cb(null, user)
     })
 }
 
