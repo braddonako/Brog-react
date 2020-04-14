@@ -45,16 +45,18 @@ app.post('/api/users/register', (req,res)=>{
 //login info
 app.post('/api/users/login', (req, res)=>{
     // first I want to search for the email
-    User.findOne({'email': req.body.email}, (err, user)=>{
-        if(!user) return res.json({loginSuccess: false, message: 'Email not found.'});
+        User.findOne({'email': req.body.email}, (err, user)=>{
+            if(!user) return res.json({loginSuccess: false, message: 'Email not found.'});
 
-    // then will check is the password is the same for the user
-    user.comparePassword(req.body.password, (err, isMatch)=>{
-        if (!isMatch) return res.json({loginSuccess: false, message: 'Your password is incorrect'});
+        // then will check is the password is the same for the user
+        user.comparePassword(req.body.password, (err, isMatch)=>{
+            if (!isMatch) return res.json({loginSuccess: false, message: 'Your password is incorrect'});
 
-    // going to create the token to the user 
-    user
-            
+        // going to create the token to the user 
+        user.generateToken((err, user) => {
+            if (err) return res.status(400).send(err);
+            res.cookie('x_auth', user.token).status(200).json({loginSuccess: true})
+            })  
         })
     })
 });

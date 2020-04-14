@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-// const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 const SALT_I = 10; // We are salting the password
 
 // require('dotenv').config()
@@ -63,13 +63,13 @@ userSchema.pre('save', function(next){
 
 // using bcrypt to compare the password to the current user trying to log in
 userSchema.methods.comparePassword = function(candidatePassword, cb){
-    bcrypt,compare(candidatePassword, this.password, function(err, isMatch){
+    bcrypt.compare(candidatePassword, this.password, function(err, isMatch){
         if(err) return cb(err);
         cb(null, isMatch);
     })
 }
 
-userSchema.methods.generateToken = function(cb) {
+userSchema.methods.generateToken = function(cb){
     let user = this;
     let token = jwt.sign(user._id.toHexString(), process.env.SECRET)
 
@@ -80,7 +80,7 @@ userSchema.methods.generateToken = function(cb) {
     })
 }
 
-userSchema.statics.findByToken(token, cb){
+userSchema.statics.findByToken = function(token, cb){
     let user = this;
 
     jwt.verify(token, process.env.SECRET, function(){
