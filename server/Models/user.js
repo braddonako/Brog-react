@@ -29,7 +29,7 @@ const userSchema  = mongoose.Schema({
     },
     comments:{
         type: Array,
-        default:[],
+        ref: 'Comment'
     },
     role:{
         type:Number,
