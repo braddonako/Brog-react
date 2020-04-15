@@ -18,3 +18,4 @@ middleware
          Frontend
 =============================
 axios
+http-proxy-middleware --save
