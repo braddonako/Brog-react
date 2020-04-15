@@ -42,8 +42,8 @@ app.get('/api/users/auth',auth,(req, res)=>{
         name: req.user.name,
         lastname: req.user.lastname,
         role: req.user.role,
-        post: req.user.post,
-        comment: req.user.comment
+        post: req.user.posts,
+        comment: req.user.comments
     })
 })
 
