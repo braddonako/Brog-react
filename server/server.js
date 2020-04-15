@@ -149,8 +149,8 @@ app.get('/api/users/logout', auth, (req,res)=>{
     )
 })
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3002;
 
-app.listen(3000, ()=> {
+app.listen(3002, ()=> {
     console.log(`heyaaa I am listening, a ha haaa ${port}`)
 })

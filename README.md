@@ -1,6 +1,10 @@
 # Brog-react
 
-Npm install --
+Npm install -- 
+
+=============================
+         Backend
+=============================
 Express
 Nodemon
 body-parser
@@ -10,3 +14,7 @@ jwt -jsonwebtoken
 dotenv
 mongoose
 middleware
+=============================
+         Frontend
+=============================
+axios
