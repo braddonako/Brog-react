@@ -26,27 +26,51 @@ app.use(cookieParser());
 // ==============================
 
 const { User } = require('./Models/user');
-const { Post } = require('./Models/posts');
+const { Article } = require('./Models/article');
 
 //===============================
 //              MIDDLEWARES
 // ==============================
 const {auth} = require('./Middleware/auth')
-const {admin } = require('./Middleware/admin')
+const { admin } = require('./Middleware/admin')
 
 //===============================
 //            POSTS
 // ==============================
-app.post('/api/posts/new', auth, admin,(req, res)=>{
-    const post = new Post(req.body);
-    post.save((err, doc) => {
+
+//create a post
+app.post('/api/articles/new',auth, admin,(req, res)=>{
+    const article = new Article(req.body);
+    article.save((err, doc) => {
         if (err) return res.json({success: false, err})
         res.status(200).json({
             success: true,
-            post: doc
+            article: doc
         })
     })
 })
+
+// get all posts
+app.get('/api/articles/show', (req,res)=>{
+    Article.find({}, (err, article)=>{
+        if (err) return res.status(400).send(err)
+        res.status(200).send(article)
+    })
+})
+
+// get an article by its id
+app.get('/api/articles/show_by_id', (req,res)=>{
+    let type = req.query.type;
+    let items = req.query.id;
+
+    if (type === "array"){
+        let ids = req.query.id.split(',');
+        
+    }
+})
+
+
+
 
 //===============================
 //         USER ROUTES
@@ -59,7 +83,7 @@ app.get('/api/users/auth',auth,(req, res)=>{
         name: req.user.name,
         lastname: req.user.lastname,
         role: req.user.role,
-        post: req.user.posts,
+        articles: req.user.article,
         comment: req.user.comments
     })
 })

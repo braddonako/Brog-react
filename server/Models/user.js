@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const SALT_I = 10; // We are salting the password
+const Schema = mongoose.Schema;
 
 // require('dotenv').config()
 
@@ -31,10 +32,10 @@ const userSchema  = mongoose.Schema({
         type: Array,
         ref: 'Comment'
     },
-    posts: {
-        type: Array,
-        ref: "Post"
-    },
+    article: [{
+        type: Schema.Types.ObjectId, 
+        ref: "Article"
+    }],
     role:{
         type:Number,
         default: 0
