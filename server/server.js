@@ -31,7 +31,7 @@ const { Article } = require('./Models/article');
 //===============================
 //              MIDDLEWARES
 // ==============================
-const {auth} = require('./Middleware/auth')
+const { auth } = require('./Middleware/auth')
 const { admin } = require('./Middleware/admin')
 
 //===============================
