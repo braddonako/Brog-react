@@ -28,13 +28,13 @@ app.use(cookieParser());
 const { User } = require('./Models/user')
 
 // Middlewares
-const auth = require('./Middleware/auth')
+const {auth} = require('./Middleware/auth')
 
 
 // ------------ //
    // USERS //
 // ------------ //
-app.get('/api/users/auth', auth,(req, res)=>{
+app.get('/api/users/auth',auth,(req, res)=>{
     res.status(200).json({
         user: req.user
     })
