@@ -31,6 +31,10 @@ const userSchema  = mongoose.Schema({
         type: Array,
         ref: 'Comment'
     },
+    posts: {
+        type: Array,
+        ref: "Post"
+    },
     role:{
         type:Number,
         default: 0
@@ -97,7 +101,8 @@ userSchema.statics.findByToken = function(token, cb){
     jwt.verify(token, process.env.SECRET, function(err, decode){
         user.findOne({"_id": decode, "token":token}, function(err, user){
             if (err) return cb(err)
-            cb(null, user)
+            cb(null, user);
+
         })
     })
 }
