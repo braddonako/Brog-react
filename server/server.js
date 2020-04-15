@@ -21,19 +21,36 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-////////////
-// MODELS //
-////////////
+//===============================
+//           MODELS
+// ==============================
 
-const { User } = require('./Models/user')
+const { User } = require('./Models/user');
+const { Post } = require('./Models/posts');
 
-// Middlewares
+//===============================
+//              MIDDLEWARES
+// ==============================
 const {auth} = require('./Middleware/auth')
+const {admin } = require('./Middleware/admin')
 
+//===============================
+//            POSTS
+// ==============================
+app.post('/api/posts/new', auth, admin,(req, res)=>{
+    const post = new Post(req.body);
+    post.save((err, doc) => {
+        if (err) return res.json({success: false, err})
+        res.status(200).json({
+            success: true,
+            post: doc
+        })
+    })
+})
 
-// ------------ //
-   // USERS //
-// ------------ //
+//===============================
+//         USER ROUTES
+// ==============================
 app.get('/api/users/auth',auth,(req, res)=>{
     res.status(200).json({
         isAdmin: req.user.role === 0 ? false : true,
@@ -48,7 +65,7 @@ app.get('/api/users/auth',auth,(req, res)=>{
 })
 
 
-// create an account info
+// Route to register a new user
 app.post('/api/users/register', (req,res)=>{
     const user = new User(req.body);
     
@@ -61,7 +78,7 @@ app.post('/api/users/register', (req,res)=>{
     })
 })
 
-//login info
+//login route -- checking if password and email are in the DB
 app.post('/api/users/login', (req, res)=>{
     // first I want to search for the email
         User.findOne({'email': req.body.email}, (err, user)=>{
@@ -80,6 +97,7 @@ app.post('/api/users/login', (req, res)=>{
     })
 });
 
+// simple logout route. Grabbing user by their id, if they have a tokem, we delete the token
 app.get('/api/users/logout', auth, (req,res)=>{
     User.findOneAndUpdate(
     {_id: req.user._id}, 
