@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const articleSchema = mongoose.Schema({
+    user:{
+        type: Schema.ObjectId, ref: 'User'
+    },
     title: {
         required: true,
         type: String,
@@ -11,11 +14,6 @@ const articleSchema = mongoose.Schema({
         required: true,
         type: String,
         maxlength: 2500
-    },
-    user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-        // required: true
     }
 }, {timestamps: true})
 

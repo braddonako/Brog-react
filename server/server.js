@@ -41,12 +41,17 @@ const { admin } = require('./Middleware/admin')
 //create a post
 app.post('/api/articles/new',auth, admin,(req, res)=>{
     const article = new Article(req.body);
+    let user = req.user.id
+
+    console.log(user)
     article.save((err, doc) => {
         if (err) return res.json({success: false, err})
         res.status(200).json({
             success: true,
-            article: doc
+            article: doc,
+            userid: user
         })
+        console.log(article)
     })
 })
 
@@ -65,8 +70,17 @@ app.get('/api/articles/show_by_id', (req,res)=>{
 
     if (type === "array"){
         let ids = req.query.id.split(',');
-        
+        items = [];
+        items = ids.map(item => {
+            return mongoose.Types.ObjectId(item)
+        })
     }
+
+    Article.find({'_id':{$in:items}}).
+    populate('user').
+    exec((err, docs) =>{
+        return res.status(200).send(docs)
+    })
 })
 
 

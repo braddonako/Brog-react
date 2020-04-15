@@ -34,7 +34,8 @@ const userSchema  = mongoose.Schema({
     },
     article: [{
         type: Schema.Types.ObjectId, 
-        ref: "Article"
+        ref: "Article",
+        required: true
     }],
     role:{
         type:Number,
