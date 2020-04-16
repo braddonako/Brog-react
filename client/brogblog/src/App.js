@@ -11,9 +11,9 @@ class App extends Component {
 
   render(){
     return (
-       <div className="App">
-         <h1>BROG</h1> 
-         <p>a ha ha</p>
+        <div className="App">
+          <h1>BROG</h1> 
+          <p>a ha ha</p>
         </div>
     )};
 }
