@@ -1,13 +1,44 @@
+/* ::root {
+    --ff-primary: 'oswald', sans-serif;
+    --ff-secondary: 'Girassol', cursive;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #242121;
+    --clr-accent: #f8333c;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+} */
+
 body {
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: black;
+    /* background-color: royalblue; */
 }
 
 .page_container {
     min-height: 75vh;
     padding-top: 85px;
+}
+
+.font_oswald {
+    font-family: 'oswald', sans-serif;;
 }
 
 /* ================== */
@@ -25,13 +56,22 @@ header .header_logo {
 
 header .header_logo_venue {
     font-size: 40px;
+    color: #f8333c;
 }
 
 header .header_logo_title {
     text-transform: uppercase;
+    color: #f8333c;
 }
 
 .navBarList {
     text-decoration: none;
-    color: black;
+    color: #f8333c;
+    text-transform: uppercase;
+    font-family: 'Girassol', cursive;
+}
+
+.nav {
+    background-color: black;
+    width: 25%;
 }
