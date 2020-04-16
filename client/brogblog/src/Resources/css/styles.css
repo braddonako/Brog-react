@@ -124,3 +124,8 @@ footer .business_nfo .icon {
 footer .business_nfo .nfo {
     padding-left: 40px;
 }
+
+.linkedIn, .github {
+    text-decoration: none;
+    color: #f8333c;
+}

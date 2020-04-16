@@ -1,7 +1,7 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCompass} from '@fortawesome/fontawesome-free-solid';
-import {faClock} from '@fortawesome/fontawesome-free-solid';
+import {faGithub} from '@fortawesome/free-brands-svg-icons';
 import {faEnvelope} from '@fortawesome/fontawesome-free-solid';
 import {faLinkedinIn} from '@fortawesome/free-brands-svg-icons';
 
@@ -27,25 +27,23 @@ const Footer = () => {
                                 </div>
                             </div>
                         <div className='tag'>
+                            <a href = 'https://www.linkedin.com/in/braddonakowski/' className='linkedIn'>
                                 <FontAwesomeIcon 
                                 icon={faLinkedinIn}
                                 className='icon'
                                 />
-                                <div className='nfo'>
-                                    <div>Phone</div>
-                                    <div>123456789</div>
-                                </div>
-                            </div>
+                            </a>
+                                
+                        </div>
                         <div className='tag'>
+                            <a href='https://www.github.com/braddonako' className='github'>
                                 <FontAwesomeIcon 
-                                icon={faClock}
+                                icon={faGithub}
                                 className='icon'
                                 />
-                                <div className='nfo'>
-                                    <div>Working Hours</div>
-                                    <div>9am-5pm</div>
-                                </div>
-                            </div>
+                            </a>
+                        </div>
+                        
                         <div className='tag'>
                                 <FontAwesomeIcon 
                                 icon={faEnvelope}
@@ -59,10 +57,7 @@ const Footer = () => {
                         </div>                      
                     </div>
                     <div className='left'>
-                        <h2>Be the first to know</h2>
-                        <div>
-                            <div>Hit us up for updates and what not! We love customers</div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
