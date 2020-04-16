@@ -24,9 +24,15 @@ const SideDrawer = (props) => {
                 </ListItem>
                 </a>
 
-                <a className='navBarList' href='/photos'>
+                <a className='navBarList' href='/login'>
                 <ListItem button >
-                    Photos
+                    Login
+                </ListItem>
+                </a>
+
+                <a className='navBarList' href='/register'>
+                <ListItem button >
+                    Register
                 </ListItem>
                 </a>
 

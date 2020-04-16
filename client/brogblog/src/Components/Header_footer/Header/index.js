@@ -50,8 +50,10 @@ class Header extends Component {
            >
                <Toolbar>
                    <div className='header'>
+                       <a href='/' className='brogHeader'>
                         <div className='font_oswald header_logo_venue'>BROG</div>
                         <div className='header_logo_title'>AKA Brads Blog</div>
+                        </a>
                    </div>
 
                 <div style={{right: '0',

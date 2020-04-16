@@ -10,7 +10,7 @@ const Footer = () => {
         <footer className='footerBackgroundColor'>
             <div className='container'>
                 <div className='logo'>
-                    Brog
+                    BROG
                 </div>
                 <div className='wrapper'>
                     <div className='left'>
@@ -26,6 +26,7 @@ const Footer = () => {
                                     <div>Denver, CO</div>
                                 </div>
                             </div>
+
                         <div className='tag'>
                             <a href = 'https://www.linkedin.com/in/braddonakowski/' className='linkedIn'>
                                 <FontAwesomeIcon 
@@ -33,8 +34,12 @@ const Footer = () => {
                                 className='icon'
                                 />
                             </a>
-                                
+                            <div className='nfo'>
+                                <div>Click the logo to</div>
+                                <div>Connect with me on LinkedIn</div>
+                            </div>
                         </div>
+
                         <div className='tag'>
                             <a href='https://www.github.com/braddonako' className='github'>
                                 <FontAwesomeIcon 
@@ -42,6 +47,10 @@ const Footer = () => {
                                 className='icon'
                                 />
                             </a>
+                            <div className='nfo'>
+                                <div>Click the logo to</div>
+                                <div>access my Github</div>
+                            </div>
                         </div>
                         
                         <div className='tag'>
