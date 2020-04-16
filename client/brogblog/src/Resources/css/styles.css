@@ -30,3 +30,8 @@ header .header_logo_venue {
 header .header_logo_title {
     text-transform: uppercase;
 }
+
+.navBarList {
+    text-decoration: none;
+    color: black;
+}
