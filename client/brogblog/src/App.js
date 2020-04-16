@@ -4,17 +4,17 @@ import axios from 'axios';
 class App extends Component {
 
   componentDidMount(){
-    axios.get('/api/articles/new').then(response=>{
-      console.log(response)
+    axios.get('/api/articles/show').then(response=>{
+      console.log(response);
     })
   }
 
   render(){
     return (
        <div className="App">
-          MY APP A HAHAHAHAH
+         <h1>BROG</h1> 
         </div>
-      )};
+    )};
 }
 
 export default App;

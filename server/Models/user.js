@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 
 // require('dotenv').config()
 
-const userSchema  = mongoose.Schema({
+const userSchema = mongoose.Schema({
     email:{
         type: String,
         required: true,
@@ -28,10 +28,6 @@ const userSchema  = mongoose.Schema({
         required: true,
         maxlength: 100
     },
-    // comments:{
-    //     type: Array,
-    //     ref: 'Comment'
-    // },
     article: [{
        type: Schema.ObjectId,
        ref: 'Article'
