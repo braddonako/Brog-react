@@ -40,8 +40,12 @@ const { admin } = require('./Middleware/admin')
 
 //create a post
 app.post('/api/articles/new',auth, admin,(req, res)=>{
+
+    // this is instantiating a class
     const article = new Article(req.body)
-    
+    // I need to come back to this at some point - need a break
+    // look at .populate() here for the user -- had some good docs at the link below
+    // https://mongoosejs.com/docs/populate.html
     // console.log(user)
     console.log(article)
     article.save((err, doc) => {
