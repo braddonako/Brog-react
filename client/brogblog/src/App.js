@@ -4,7 +4,7 @@ import axios from 'axios';
 class App extends Component {
 
   componentDidMount(){
-    axios.get('/api/articles/show').then(response=>{
+    axios.get('/api/articles/new').then(response=>{
       console.log(response)
     })
   }

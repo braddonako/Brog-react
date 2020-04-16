@@ -40,16 +40,15 @@ const { admin } = require('./Middleware/admin')
 
 //create a post
 app.post('/api/articles/new',auth, admin,(req, res)=>{
-    const article = new Article(req.body);
-    let user = req.user.id
-
+    const article = new Article(req.body)
+    
     console.log(user)
+    console.log(article)
     article.save((err, doc) => {
         if (err) return res.json({success: false, err})
         res.status(200).json({
             success: true,
-            article: doc,
-            userid: user
+            info: doc,
         })
         console.log(article)
     })
@@ -97,11 +96,10 @@ app.get('/api/users/auth',auth,(req, res)=>{
         name: req.user.name,
         lastname: req.user.lastname,
         role: req.user.role,
-        articles: req.user.article,
-        comment: req.user.comments
+        articles: req.user.article
+        // comment: req.user.comments
     })
 })
-
 
 // Route to register a new user
 app.post('/api/users/register', (req,res)=>{

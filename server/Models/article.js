@@ -2,9 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const articleSchema = mongoose.Schema({
-    user:{
-        type: Schema.ObjectId, ref: 'User'
-    },
     title: {
         required: true,
         type: String,

@@ -28,14 +28,13 @@ const userSchema  = mongoose.Schema({
         required: true,
         maxlength: 100
     },
-    comments:{
-        type: Array,
-        ref: 'Comment'
-    },
+    // comments:{
+    //     type: Array,
+    //     ref: 'Comment'
+    // },
     article: [{
-        type: Schema.Types.ObjectId, 
-        ref: "Article",
-        required: true
+       type: Schema.ObjectId,
+       ref: 'Article'
     }],
     role:{
         type:Number,
