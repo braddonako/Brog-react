@@ -26,3 +26,4 @@ http-proxy-middleware --save
 react-router-dom
 redux
 @material-ui/core
+@material-ui/icons
