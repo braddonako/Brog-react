@@ -42,13 +42,13 @@ const { admin } = require('./Middleware/admin')
 app.post('/api/articles/new',auth, admin,(req, res)=>{
     const article = new Article(req.body)
     
-    console.log(user)
+    // console.log(user)
     console.log(article)
     article.save((err, doc) => {
         if (err) return res.json({success: false, err})
         res.status(200).json({
             success: true,
-            info: doc,
+            info: doc
         })
         console.log(article)
     })
