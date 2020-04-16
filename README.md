@@ -27,3 +27,9 @@ react-router-dom
 redux
 @material-ui/core
 @material-ui/icons
+@fortawesome/fontawesome 
+@fortawesome/fontawesome-free 
+@fortawesome/fontawesome-free-solid 
+@fortawesome/fontawesome-svg-core 
+@fortawesome/free-solid-svg-icons 
+@fortawesome/react-fontawesome
