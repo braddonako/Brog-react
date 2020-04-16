@@ -32,13 +32,18 @@ body {
     /* background-color: royalblue; */
 }
 
+.container {
+    width: 1100px;
+    margin: 0 auto;
+}
+
 .page_container {
     min-height: 75vh;
     padding-top: 85px;
 }
 
 .font_oswald {
-    font-family: 'oswald', sans-serif;;
+    font-family: 'oswald', sans-serif;
 }
 
 /* ================== */
@@ -71,7 +76,51 @@ header .header_logo_title {
     font-family: 'Girassol', cursive;
 }
 
-.nav {
-    background-color: black;
-    width: 25%;
+/* ================== */
+     /* footer */
+/* ================== */
+
+.footerBackgroundColor {
+    background-color: rgba(36, 36, 33, .2);
+}
+
+footer .logo {
+    text-align: center;
+    font-family: 'oswald', sans-serif;;
+    color: #f8333c;
+    font-size: 40px;
+    padding: 11px 0px;
+    border-bottom: 1px solid #4d4d4d;
+}
+
+footer .wrapper {
+    display: flex;
+    color: #f8333c;
+}
+
+footer .left,
+footer .right {
+    flex: 1;
+}
+
+footer .business_nfo {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .business_nfo .tag {
+    flex-grow: 1;
+    position: relative;
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+footer .business_nfo .icon {
+    position: absolute;
+    font-size: 26px;
+    top: 10px;
+}
+
+footer .business_nfo .nfo {
+    padding-left: 40px;
 }
