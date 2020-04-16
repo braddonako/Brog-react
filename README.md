@@ -24,7 +24,8 @@ concurrently
 axios
 http-proxy-middleware --save
 react-router-dom
-redux
+redux react-redux
+redux-thunk
 @material-ui/core
 @material-ui/icons
 @fortawesome/fontawesome 
@@ -33,3 +34,4 @@ redux
 @fortawesome/fontawesome-svg-core 
 @fortawesome/free-solid-svg-icons 
 @fortawesome/react-fontawesome
+@fortawesome/fontawesome-svg-brands
