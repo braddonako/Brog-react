@@ -13,6 +13,7 @@ class App extends Component {
     return (
        <div className="App">
          <h1>BROG</h1> 
+         <p>a ha ha</p>
         </div>
     )};
 }
