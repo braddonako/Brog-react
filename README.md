@@ -23,3 +23,5 @@ concurrently
 =======================================
 axios
 http-proxy-middleware --save
+react-router-dom
+redux
