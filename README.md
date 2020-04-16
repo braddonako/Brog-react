@@ -25,3 +25,4 @@ axios
 http-proxy-middleware --save
 react-router-dom
 redux
+@material-ui/core

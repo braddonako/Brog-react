@@ -4,6 +4,11 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.page_container {
+    min-height: 75vh;
+    padding-top: 85px;
+}
+
 /* ================== */
      /* header */
 /* ================== */
