@@ -12,9 +12,9 @@ const SideDrawer = (props) => {
         >
         
             <List component='nav'>
-                <a className='navBarList' href='/show'>
+                <a className='navBarList' href='/about'>
                         <ListItem button >
-                            About BROG
+                            About
                         </ListItem>
                 </a>
             

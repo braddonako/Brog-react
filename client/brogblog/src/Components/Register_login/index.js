@@ -22,6 +22,14 @@ const RegisterLogin = () => {
                     <div className='right'>
                         <h1>Registered Users</h1>
                         <Login/>
+                        <MyButton
+                        type='default'
+                        title='Login'
+                        linkTo='/login'
+                        addStyles={{
+                            margin:'10px 0 0 0'
+                        }}
+                        />
                     </div>
                 </div>
             </div>
