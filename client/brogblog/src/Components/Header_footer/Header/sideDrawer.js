@@ -10,8 +10,14 @@ const SideDrawer = (props) => {
             open={props.open}
             onClose={() => props.onClose(false)}
         >
-        
             <List component='nav'>
+
+                <a className='navBarList' href='/'>
+                <ListItem button >
+                    Home
+                </ListItem>
+                </a>
+
                 <a className='navBarList' href='/about'>
                         <ListItem button >
                             About
