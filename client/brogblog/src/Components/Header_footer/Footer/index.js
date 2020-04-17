@@ -28,7 +28,7 @@ const Footer = () => {
                                 </div>
 
                             <div className='tag'>
-                                <a href = 'https://www.linkedin.com/in/braddonakowski/' className='linkedIn'>
+                                <a href = 'https://www.linkedin.com/in/braddonakowski/' >
                                     <FontAwesomeIcon 
                                     icon={faLinkedinIn}
                                     className='icon'
@@ -41,7 +41,7 @@ const Footer = () => {
                             </div>
 
                             <div className='tag'>
-                                <a href='https://www.github.com/braddonako' className='github'>
+                                <a href='https://www.github.com/braddonako' >
                                     <FontAwesomeIcon 
                                     icon={faGithub}
                                     className='icon'

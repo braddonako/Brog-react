@@ -15,8 +15,16 @@ body {
     padding-top: 85px;
 }
 
+.page_wrapper {
+    padding-top: 85px;
+}
+
 .font_oswald {
     font-family: 'oswald', sans-serif;
+}
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* ================== */
@@ -105,7 +113,47 @@ footer .business_nfo .nfo {
     padding-left: 40px;
 }
 
-.linkedIn, .github, .brogHeader {
-    text-decoration: none;
-    color: #f8333c;
+/* ================== */
+  /* Register/login */
+/* ================== */
+.register_login_container {
+    display: flex;
+    border: 1px solid #999592;
+    border-top: 5px solid #999592;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 80px 0px 110px 0px;
+    padding: 30px;
+    min-height: 430px;
+}
+
+.register_login_container .left,
+.register_login_container .right {
+    flex: 1
+}
+
+.register_login_container h2 {
+    margin: 20px 0px;
+    text-transform: uppercase;
+    color: #686868;
+}
+
+.register_login_container p {
+    font-weight: 300;
+    font-size: 16px;
+    width: 90%;
+}
+
+
+
+/* ================== */
+     /* buttons */
+/* ================== */
+
+.link_default {
+    text-transform: uppercase;
+    padding: 10px;
+    display: table;
+    background: #e1ddc3;
+    margin-top: 10px;
 }
