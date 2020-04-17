@@ -1,13 +1,13 @@
 # Brog-react
-=======================================
-          Technologies Used
-=======================================
-backend === nodejs, express, mongoDB
-frontend === react.js
 
-=======================================
-       Npm install -- Backend
-=======================================
+Technologies Used
+
+backend: nodejs, express, mongoDB
+frontend: react.js
+
+
+Npm install -- Backend
+
 Express
 Nodemon
 body-parser
@@ -18,9 +18,11 @@ dotenv
 mongoose
 middleware
 concurrently
-=======================================
-       Npm install -- Frontend
-=======================================
+
+
+
+Npm install -- Frontend
+
 axios
 http-proxy-middleware --save
 react-router-dom
