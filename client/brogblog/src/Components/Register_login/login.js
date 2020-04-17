@@ -46,6 +46,7 @@ class Login extends Component {
 
     updateForm = (element) => {
         const newFormData = update(element, this.state.formdata, 'login');
+        console.log(newFormData)
         this.setState({
             formerror: false,
             formdata: newFormData
