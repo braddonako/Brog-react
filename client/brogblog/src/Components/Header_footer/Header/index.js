@@ -42,7 +42,7 @@ class Header extends Component {
            <AppBar
                 position='fixed'
                 style={{
-                    backgroundColor: this.state.headerShow ? 'transparent' : 'rgba(36,36,33, .2)',
+                    backgroundColor: this.state.headerShow ? 'transparent' : 'rgba(36,36,33, .9)',
                     boxShadow: 'none',
                     padding: '10px 0px',
                     color: 'red'
@@ -51,7 +51,7 @@ class Header extends Component {
                <Toolbar>
                    <div className='header'>
                        <a href='/' className='brogHeader'>
-                        <div className='font_oswald header_logo_venue'>BROG</div>
+                        <div className='font_oswald header_logo_venue'>THE BROG</div>
                         <div className='header_logo_title'>AKA Brads Blog</div>
                         </a>
                    </div>
@@ -59,14 +59,16 @@ class Header extends Component {
                 <div style={{right: '0',
                     position: 'absolute'
                 }}>
+                
                 <IconButton
                     aria-label='Menu'
                     color='inherit'
-                    onClick={() => this.toggleDrawer(true)}
-                    
+                    onClick={() => this.toggleDrawer(true)}       
                 >
-                    <MenuIcon style={{position: 'relative'}}/>
+                <MenuIcon style={{position: 'relative'}}/>
+                <p className='menu'>Menu</p>
                 </IconButton>
+
                 <SideDrawer 
                     open={this.state.drawerOpen}
                     onClose={(value) => this.toggleDrawer(value) }

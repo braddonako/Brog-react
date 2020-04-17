@@ -24,17 +24,13 @@ const SideDrawer = (props) => {
                 </ListItem>
                 </a>
 
-                <a className='navBarList' href='/login'>
+                <a className='navBarList' href='/register_login'>
                 <ListItem button >
-                    Login
+                    Register/Login
                 </ListItem>
                 </a>
 
-                <a className='navBarList' href='/register'>
-                <ListItem button >
-                    Register
-                </ListItem>
-                </a>
+                
 
             </List>
 
