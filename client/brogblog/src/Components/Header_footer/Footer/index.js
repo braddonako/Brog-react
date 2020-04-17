@@ -10,7 +10,7 @@ const Footer = () => {
         <footer className='footerBackgroundColor'>
             <div className='container'>
                 <div className='logo'>
-                    BROG
+                    THE BROG
                 </div>
                 <div className='wrapper'>
                     <div className='left'>
