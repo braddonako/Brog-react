@@ -1,35 +1,28 @@
 import React from 'react';
 import MyButton from '../utils/button';
-import Login from './login'
+import Login from './login';
 
 const RegisterLogin = () => {
     return (
-        <div className='page_wrapper'>
-            <div className='container'>
-                <div className='register_login_container'>
-                    <div className='left'>
-                        <h1>New Users</h1>
-                        <p>Welcome to the Brog! If you haven't signed up yet, here is your chance. By creating an account, you will be able to comment on posts, engage with other users about topics, and eventually, have the option to sign up for daily or weekly posts!</p>
+        <div className="page_wrapper">
+            <div className="container">
+                <div className="register_login_container">
+                    <div className="left">
+                        <h1>New Customers</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                         <MyButton
-                        type='default'
-                        title='Create an account'
-                        linkTo='/register'
-                        addStyles={{
-                            margin:'10px 0 0 0'
-                        }}
+                            type="default"
+                            title="Create an account"
+                            linkTo="/register"
+                            addStyles={{
+                                margin:'10px 0 0 0'
+                            }}
                         />
                     </div>
-                    <div className='right'>
-                        <h1>Registered Users</h1>
+                    <div className="right">
+                        <h2>Registered customers</h2>
+                        <p>If you have an account please log in.</p>
                         <Login/>
-                        <MyButton
-                        type='default'
-                        title='Login'
-                        linkTo='/login'
-                        addStyles={{
-                            margin:'10px 0 0 0'
-                        }}
-                        />
                     </div>
                 </div>
             </div>
