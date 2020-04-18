@@ -1,3 +1,5 @@
+@media (min-width: 600px){
+
 body {
     padding: 0;
     margin: 0;
@@ -5,9 +7,11 @@ body {
     /* background-color: royalblue; */
 }
 
+
 .container {
     width: 1100px;
     margin: 0 auto;
+}
 }
 
 .page_container {
@@ -19,13 +23,17 @@ body {
     padding-top: 85px;
 }
 
+
 .font_oswald {
     font-family: 'oswald', sans-serif;
 }
+
+
 a {
     text-decoration: none;
     color: inherit;
 }
+
 
 /* ================== */
      /* header */
@@ -172,7 +180,8 @@ footer .business_nfo .nfo {
 /* ================== */
     /* Home */
 /* ================== */
-/* .register_login_container {
+
+.homeContainer {
     display: flex;
     border: 1px solid #999592;
     border-top: 5px solid #999592;
@@ -181,11 +190,5 @@ footer .business_nfo .nfo {
     margin: 80px 0px 110px 0px;
     padding: 30px;
     min-height: 430px;
-} */
-
-
-.homeContainer {
-    display: flex;
-    border: 1px solid #999592;
-    border-top: ;
 }
+
