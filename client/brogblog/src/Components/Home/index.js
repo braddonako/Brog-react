@@ -4,7 +4,11 @@ class Home extends Component {
     render() {
         return (
             <div className='page_wrapper'>
-                home
+                
+                <div classNam='homeContainer'>
+                    <h1>Sample</h1>
+                </div>
+
             </div>
         );
     }
