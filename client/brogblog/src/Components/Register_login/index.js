@@ -8,8 +8,8 @@ const RegisterLogin = () => {
             <div className="container">
                 <div className="register_login_container">
                     <div className="left">
-                        <h1>New Customers</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        <h1>Register</h1>
+                        <p>Welcome to the Brog!If you haven't signed up yet, here is your chance.By signing up, I will not bombard you with emails, unless you ask me to. </p>
                         <MyButton
                             type="default"
                             title="Create an account"
@@ -20,7 +20,7 @@ const RegisterLogin = () => {
                         />
                     </div>
                     <div className="right">
-                        <h2>Registered customers</h2>
+                        <h2>Welcome back!</h2>
                         <p>If you have an account please log in.</p>
                         <Login/>
                     </div>

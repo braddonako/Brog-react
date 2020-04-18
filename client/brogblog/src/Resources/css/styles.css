@@ -169,7 +169,7 @@ footer .business_nfo .nfo {
      /* buttons */
 /* ================== */
 
-.link_default {
+.link_default, button {
     text-transform: uppercase;
     padding: 10px;
     display: table;
@@ -190,5 +190,17 @@ footer .business_nfo .nfo {
     margin: 80px 0px 110px 0px;
     padding: 30px;
     min-height: 430px;
+}
+/* ================== */
+      /* Form */
+/* ================== */
+
+input {
+    font-size: 15px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    width: 100%;
+    margin: 10px 0px 0px 0px;
 }
 

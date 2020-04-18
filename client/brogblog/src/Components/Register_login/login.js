@@ -102,7 +102,7 @@ class Login extends Component {
 
                     { this.state.formError ?
                         <div className="error_label">
-                            Please check your data
+                            Username or Password is incorrect
                         </div>
                     :null}
                     <button onClick={(event)=> this.submitForm(event)}>
