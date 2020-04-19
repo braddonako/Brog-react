@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
     return (
         <div className='page_wrapper'>
-            <div classNmae='container'>
+            <div className='container'>
                 <h1 className='brogAbout'>So, what is THE BROG all about?</h1>
                 <p> 
                     Well, I am going to tell you right now. But first, I'm going to set the record straight... I am not a writer. Realistically, I should probably start doing a podcast or some shit cause I love to talk. Especially about technology. ** Note on language -- I will sometimes be using profanity. This is my blog, I want to connect with people that want to hear the real me. **  But yes, talking about technology is one of the many reasons I wanted to create a blog about JavaScript, my coding bootcamp experience, and how MY career change is going. Whenever I talk to my friends about programming, they have no flippin idea what I am talking about. And quite frankly, that stinks. I just want to tell someone about all the cool new tricks and tips that I am learning, and receive a response from them other than 'I don’t know what the hell you are talking about.’  So ya, that is a reason I really want to do this. If I can help one person out that is currently learning how to code, or wants to make a career change, then this was a huge success.  
