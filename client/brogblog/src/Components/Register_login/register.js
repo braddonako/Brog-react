@@ -20,7 +20,6 @@ class Register extends Component {
                 },
                 validation:{
                     required: true,
-                    email: true
                 },
                 valid: false,
                 touched: false,
@@ -36,7 +35,6 @@ class Register extends Component {
                 },
                 validation: {
                     required: true,
-                    email: true
                 },
                 valid: false,
                 touched: false,
@@ -92,6 +90,15 @@ class Register extends Component {
         }
     }
 
+    updateForm = (element) => {
+        const newFormdata = update(element,this.state.formdata,'register');
+        this.setState({
+            formError: false,
+            formdata: newFormdata
+        })
+    }
+
+
     submitForm = () =>{
 
     }
@@ -126,6 +133,23 @@ class Register extends Component {
                                         formdata={this.state.formdata.email}
                                         change={(element)=> this.updateForm(element)}
                                     />            
+                                </div>
+                                <h2>Veryify Password</h2>
+                                  <div className='form_block_two'> 
+                                    <div className='block'>
+                                        <FormField
+                                            id={'password'}
+                                            formdata={this.state.formdata.password}
+                                            change={(element)=> this.updateForm(element)}
+                                        />                                      
+                                    </div>
+                                    <div className='block'>
+                                        <FormField
+                                            id={'confirmPassword'}
+                                            formdata={this.state.formdata.confirmPassword}
+                                            change={(element)=> this.updateForm(element)}
+                                        />
+                                    </div>
                                 </div>
                             </form>
                         </div>
