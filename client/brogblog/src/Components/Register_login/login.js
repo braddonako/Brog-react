@@ -54,7 +54,6 @@ class Login extends Component {
         })
     }
 
-    
 
     submitForm= (event) =>{
         event.preventDefault();
@@ -106,7 +105,7 @@ class Login extends Component {
                             Username or Password is incorrect
                         </div>
                     :null}
-                    <button onClick={(event)=> this.submitForm(event)}>
+                    <button type='button' onClick={(event)=> this.submitForm(event)}>
                         Log in
                     </button>
 
