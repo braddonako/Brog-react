@@ -99,8 +99,19 @@ class Register extends Component {
     }
 
 
-    submitForm = () =>{
+    submitForm= (event) =>{
+        event.preventDefault();
+        
+        let dataToSubmit = generateData(this.state.formdata,'register');
+        let formIsValid = isFormValid(this.state.formdata,'register')
 
+        if(formIsValid){
+            console.log(dataToSubmit)
+            } else {
+            this.setState({
+                formError: true
+            })
+        }
     }
 
     render() {
@@ -150,6 +161,16 @@ class Register extends Component {
                                             change={(element)=> this.updateForm(element)}
                                         />
                                     </div>
+                                </div>
+                                <div>
+                                    { this.state.formError ?
+                                        <div className="error_label">
+                                         Please try again
+                                        </div>
+                                    :null}
+                                    <button type='button' onClick={(event)=> this.submitForm(event)}>
+                                        Create an account
+                                    </button>
                                 </div>
                             </form>
                         </div>
