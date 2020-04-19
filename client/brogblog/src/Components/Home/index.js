@@ -10,9 +10,15 @@ class Home extends Component {
                         <p class='welcomeSub'>All about Coding Bootcamps && JavaScript </p>
                     </div>
                     <div className='homeContainer'>
+                        
                         <div>
-                            <h1 className='postTitle'>Most recent BROG title</h1>
-                            <p className='postBody'>Here is some text just to fuckin put something in here. Soon we will connect to the DB to auto populate so my most recent post is always featured -- fill figure this out at somepoint lol. These are the fields we need tho</p>
+                            <h1 className='postTitle'>So, you want to learn how to code?? HERE'S HOW:</h1>
+                            <p className='postBody'>
+                                {/* JUST FC*IN BUILD STUFF!!! When I first started out, I would see people on reddit saying this all the time, and its really fucking confusing. (At least I thought so, lol) I would think to myself 'What the hell am I going to build?'. Now that I am further along in the process, I realize how fricken true this is.   You just gotta do it. I know, I know. It sounds really simple, huh? */}
+                                Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym.Został po raz pierwszy użyty w XV w.przez nieznanego drukarza do wypełnienia tekstem próbnej książki.Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym.Spopularyzował się w latach 60. XX w.wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker
+
+                            </p>
+                            
                         </div>
                         <div className='datePosted'>
                             Date Posted: 4/18/2020
