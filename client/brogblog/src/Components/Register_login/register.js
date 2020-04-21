@@ -165,7 +165,7 @@ class Register extends Component {
                                 <div>
                                     { this.state.formError ?
                                         <div className="error_label">
-                                         Please try again
+                                         Something went wrong, Please try again
                                         </div>
                                     :null}
                                     <button type='button' onClick={(event)=> this.submitForm(event)}>
