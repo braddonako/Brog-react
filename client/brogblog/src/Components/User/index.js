@@ -6,7 +6,7 @@ const UserDashboard = () => {
     return (
 
         <UserLayout>
-            <div className='user-nfo-panel'>
+            <div className='user_nfo_panel'>
                  <h1>User Information</h1>
                  <div>
                      <span>Name</span>

@@ -24,9 +24,9 @@ const UserLayout = (props) => {
 
     return (
         <div className='container'>
-            <div className='userContainer'>
+            <div className='user_container'>
                 <div className='user_left_nav'>
-                    My account
+                    
                     <div className='links'>
                         {generateLinks(links)}
                     </div>
