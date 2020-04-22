@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
+import Axios from 'axios';
 
 class Home extends Component {
+
+    componentDidMount(){
+        Axios.get('/api/articles/show').then(response=>{
+            console.log(response)
+        })
+    }
+    
     render() {
         return (
             <div className='page_wrapper'>
                 <div className='container'>
                     <div>
-                        <h1 class='welcome'>Welcome to da BROG</h1>
-                        <p class='welcomeSub'>All about Coding Bootcamps && JavaScript </p>
+                        <h1 className='welcome'>Welcome to da BROG</h1>
+                        <p className='welcomeSub'>All about Coding Bootcamps && JavaScript </p>
                     </div>
                     <div className='homeContainer'>
                         
