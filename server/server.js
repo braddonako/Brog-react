@@ -63,8 +63,17 @@ app.get('/api/articles/show', (req,res)=>{
     Article.find({}, (err, article)=>{
         if (err) return res.status(400).send(err)
         res.status(200).send(article)
-    })
+    }).sort({$natural: -1})
 })
+
+// get one article -- for the home page. this is tight
+
+app.get('/api/articles/showMostRecent', (req,res)=> {
+    Article.findOne({}, (err, article)=>{
+        if (err) return res.status(400).send(err)
+        res.status(200).send(article)
+    }).sort({$natural: -1});
+});
 
 // get an article by its id
 app.get('/api/articles/show_by_id', (req,res)=>{

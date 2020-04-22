@@ -14,6 +14,9 @@ const articleSchema = mongoose.Schema({
     },
     image: {
         type: String
+    },
+    date: {
+        type: String
     }
 }, {timestamps: true})
 

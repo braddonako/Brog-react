@@ -6,6 +6,7 @@ import Home from './Components/Home';
 import Layout from './hoc/layout';
 import About from './Components/About';
 import Register from  './Components/Register_login/register';
+import AllPosts from './Components/Posts'
 
 import UserDashboard from './Components/User'
 
@@ -18,7 +19,8 @@ const Routes = () => {
         <Route path='/register_login' exact component={ RegisterLogin }/>
         <Route path='/register' exact component={ Register }/>
         <Route path='/' exact component={ Home }/>
-        <Route path='/about' exact component={About}/>>
+        <Route path='/about' exact component={About}/>
+        <Route path='/posts' exact component={AllPosts} />>
       </Switch>
     </Layout>
     

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 
-class Home extends Component {
+class AllPosts extends Component {
 
     constructor(){
         super();
@@ -25,11 +25,6 @@ class Home extends Component {
     }
     
     render() {
-
-            let today = new Date();
-            let date = today.getFullYear() + '/' + (today.getMonth()+1)+ '/' + (today.getDate())
-            console.log(date)
-            const lastPost = []
             const getLastPost = this.state.articlePosts.map((articlePosts) => {
                 console.log(articlePosts)
                 
@@ -59,7 +54,7 @@ class Home extends Component {
         return(
             <div>
                 <div>
-                    <h1 className='welcome'>Welcome to da BROG</h1>
+                    <h1 className='welcome'>All BROG Posts</h1>
                     <p className='welcomeSub'>All about Coding Bootcamps && JavaScript </p>
                 </div>
                 {getLastPost}
@@ -69,4 +64,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default AllPosts;
