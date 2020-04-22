@@ -2,11 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const articleSchema = mongoose.Schema({
-    userid:{
-        type: Schema.ObjectId,
-        ref:'User',
-        type: String
-    },
     title: {
         required: true,
         type: String,
@@ -16,6 +11,9 @@ const articleSchema = mongoose.Schema({
         required: true,
         type: String,
         maxlength: 2500
+    },
+    image: {
+        type: String
     }
 }, {timestamps: true})
 

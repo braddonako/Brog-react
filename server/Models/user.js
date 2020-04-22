@@ -29,7 +29,7 @@ const userSchema = mongoose.Schema({
         maxlength: 100
     },
     article: [{
-       type: Schema.ObjectId,
+       type: mongoose.Schema.Types.ObjectId,
        ref: 'Article'
     }],
     role:{
