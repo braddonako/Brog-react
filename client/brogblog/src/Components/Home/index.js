@@ -6,7 +6,7 @@ class Home extends Component {
     constructor(){
         super();
         this.state= {
-            articlePosts:[]
+            mostRecentPost:[]
         }
     }
 
@@ -15,54 +15,40 @@ class Home extends Component {
     }
 
     getAllArticles = () =>{
-        // we are fetching the show all blog posts here through axios -- Only admins can access this post 
-        Axios.get('/api/articles/show').then(response => {
-            // console.log(response)
+        // We are fetching the most recent post here to display it on the home page
+        Axios.get('/api/articles/showMostRecent').then(response => {
+            console.log(response)
             this.setState({
-                articlePosts: response.data
+                mostRecentPost: response.data
             })
         })
     }
     
     render() {
-
-            let today = new Date();
-            let date = today.getFullYear() + '/' + (today.getMonth()+1)+ '/' + (today.getDate())
-            console.log(date)
-            const lastPost = []
-            const getLastPost = this.state.articlePosts.map((articlePosts) => {
-                console.log(articlePosts)
-                
-                // now I need to return the form below, then I can render it again.. 
-            return (
-                <div className = 'page_wrapper'
-                key = {articlePosts._id }>
-                    <div className='container'>
-                        <div className='homeContainer'>
-                            
-                            <div>
-                                <h1 className='postTitle'>{articlePosts.title}</h1>
-                                <p className='postBody'>
-                                    {articlePosts.body}
-                                </p>
-                                
-                            </div>
-                            <div className='datePosted'>
-                                Date Posted: {articlePosts.date}
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            );
-        })
         return(
             <div>
                 <div>
                     <h1 className='welcome'>Welcome to da BROG</h1>
                     <p className='welcomeSub'>All about Coding Bootcamps && JavaScript </p>
                 </div>
-                {getLastPost}
+                     <div className = 'page_wrapper'
+                key = {this.state.mostRecentPost._id }>
+                    <div className='container'>
+                        <div className='homeContainer'>
+                            
+                            <div>
+                                <h1 className='postTitle'>{this.state.mostRecentPost.title}</h1>
+                                <p className='postBody'>
+                                    {this.state.mostRecentPost.body}
+                                </p>
+                                
+                            </div>
+                            <div className='datePosted'>
+                                Date Posted: {this.state.mostRecentPost.date}
+                            </div>                           
+                        </div>
+                    </div>
+                </div>
             </div>
             
         )
