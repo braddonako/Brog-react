@@ -6,25 +6,30 @@ class Home extends Component {
     constructor(){
         super();
         this.state= {
-            blogPosts:[]
+            articlePosts:[]
         }
     }
 
     componentDidMount(){
-        this.getAllPosts();
+        this.getAllArticles();
     }
 
-    getAllPosts = async () =>{
+    getAllArticles = async () =>{
         // we are fetching the show all blog posts here through axios -- Only admins can access this post 
-        const getBrogs = Axios.get('/api/articles/show').then(response => {
+        Axios.get('/api/articles/show').then(response => {
             console.log(response)
             this.setState({
-                blogPosts: getBrogs.data
+                articlePosts: response.data
             })
         })
     }
     
     render() {
+            const lastPost = []
+            const getLastPost = this.state.articlePosts.map((articlePosts) => {
+                console.log(articlePosts)
+            })
+
 
         return (
             <div className='page_wrapper'>
