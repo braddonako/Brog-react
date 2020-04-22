@@ -17,7 +17,7 @@ class Home extends Component {
     getAllArticles = () =>{
         // We are fetching the most recent post here to display it on the home page
         Axios.get('/api/articles/showMostRecent').then(response => {
-            console.log(response)
+            // console.log(response)
             this.setState({
                 mostRecentPost: response.data
             })
