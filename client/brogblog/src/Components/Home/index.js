@@ -3,6 +3,27 @@ import Axios from 'axios';
 
 class Home extends Component {
 
+    constructor(){
+        super();
+        this.state= {
+            blogPosts:[]
+        }
+    }
+
+    componentDidMount(){
+        this.getAllPosts();
+    }
+
+    getAllPosts = async () =>{
+        // we are fetching the show all blog posts here through axios -- Only admins can access this post 
+        const getBrogs = Axios.get('/api/articles/show').then(response => {
+            console.log(response)
+            this.setState({
+                blogPosts: getBrogs.data
+            })
+        })
+    }
+    
     render() {
 
         return (
