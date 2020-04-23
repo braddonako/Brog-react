@@ -13,6 +13,18 @@ const links = [
     }
 ]
 
+    const admin = [
+        {
+            name: 'Add a new post',
+            linkTo: '/admin/add_post'
+        },
+        {
+            name: 'Site Info',
+            linkTo: '/admin/site_info'
+        }
+        
+    ]
+
 const UserLayout = (props) => {
 
     const generateLinks = (links) => (
@@ -24,6 +36,7 @@ const UserLayout = (props) => {
     )
     
 
+
     return (
         <div className='container'>
             <div className='user_container'>
@@ -32,6 +45,16 @@ const UserLayout = (props) => {
                         <div className='links'>
                             {generateLinks(links)}
                         </div>
+                        {
+                            props.user.userData.isAdmin ?
+                            <div>
+                                <h2>Admin</h2>
+                                <div className='links'>
+                                {generateLinks(admin)}
+                        </div>
+                            </div>
+                            :null
+                        }
                     </div>
                     <div className='user_right'>
                         {props.children}
