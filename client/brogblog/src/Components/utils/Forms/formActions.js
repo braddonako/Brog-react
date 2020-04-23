@@ -70,4 +70,15 @@ export const isFormValid = (formdata, formName) => {
 
 }
 
+export const resetFields = (formdata, formName) => {
+    const newFormdata= {...formdata};
+    for(let key in new formdata){
+        newFormdata[key].value = '';
+        newFormdata[key].valid= false;
+        newFormdata[key].touch= false;
+        newFormdata[key].validationMessage = ''
+    }
+    return newFormdata
+}
+
 

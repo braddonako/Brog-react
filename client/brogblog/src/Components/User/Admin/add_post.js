@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import UserLayout from '../../../hoc/user';
 
 import FormField from '../../utils/Forms/formfield';
-import { update, generateData, isFormValid } from '../../utils/Forms/formActions';
+import { update, generateData, isFormValid, resetFields } from '../../utils/Forms/formActions';
 
 import {connect} from 'react-redux';
 import {addPost} from '../../../actions/post_actions'
@@ -53,10 +53,10 @@ class AddPost extends Component {
                 config: {
                     name: 'image_input',
                     type: 'text',
-                    placeholder: 'image'
+                    placeholder: 'image URL'
                 },
                 validation: {
-                    required: true,
+                    required: false,
                 },
                 valid: false,
                 touched: false,
@@ -82,6 +82,84 @@ class AddPost extends Component {
         }
     }
 
+    updateForm = (element) => {
+        const newFormdata = update(element,this.state.formdata,'posts');
+        this.setState({
+            formError: false,
+            formdata: newFormdata
+        })
+    }
+
+    resetFieldHandler = () => {
+        const newFormData = resetFields(this.state.formData, 'posts')
+
+        this.setState({
+            formdata: newFormData,
+            formSuccess: true
+        })
+        setTimeout(() => {
+            this.setState({
+                formSuccess: false
+            })
+        }, 3000);
+    }
+
+
+    // submitForm= (event) =>{
+    //     event.preventDefault();
+        
+    //     let dataToSubmit = generateData(this.state.formdata,'posts');
+    //     let formIsValid = isFormValid(this.state.formdata,'posts')
+
+    //     if(formIsValid){
+    //           this.props.dispatch(addPost(dataToSubmit)).then(() => {
+    //               if(this.props.posts.addPost.success){
+    //                 this.resetFieldHandler()
+    //               }else{
+    //                 this.setState({
+    //                     formError: true
+    //                 })
+    //               }
+    //           })
+    //         } else {
+    //         this.setState({
+    //             formError: true
+    //         })
+    //     }
+    // }   
+
+        submitForm= (event) =>{
+        event.preventDefault();
+        
+        let dataToSubmit = generateData(this.state.formdata,'posts');
+        let formIsValid = isFormValid(this.state.formdata,'posts')
+
+        if(formIsValid){
+            this.props.dispatch(addPost(dataToSubmit))
+            .then(response => {
+                if (response.payload.success){
+                    this.setState({
+                        formError: false,
+                        formSuccess: true
+                    });
+                    setTimeout(() => {
+                            this.props.history.push('/')
+                    }, 3000);
+                } else{
+                    this.setState({formError: true})
+                }
+            }).catch(e=>{
+                this.setState({
+                    formError: true
+                })
+            })
+            } else {
+            this.setState({
+                formError: true
+            })
+        }
+    }
+
     render() {
         return (
             <UserLayout>
@@ -102,10 +180,19 @@ class AddPost extends Component {
                         />
 
                         <FormField
+                            id={'image'}
+                            formdata={this.state.formdata.image}
+                            change={(element)=> this.updateForm(element)}
+                        />
+
+                        <FormField
                             id={'date'}
                             formdata={this.state.formdata.date}
                             change={(element)=> this.updateForm(element)}
                         />
+                        <button type='button' onClick={(event)=> this.submitForm(event)}>
+                                Submit a new post
+                        </button>
                        </form>
                    </div>
                 </div>
@@ -117,8 +204,8 @@ class AddPost extends Component {
 
 const mapStateToProps = (state) =>{
     return{
-        posts: state.posts
+        article: state.article
     }
 }
 
-export default connect()(AddPost);
+export default connect(mapStateToProps)(AddPost);
