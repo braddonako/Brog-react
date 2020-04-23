@@ -314,6 +314,11 @@ button, .link_default {
     min-height: 430px;
 }
 
+.buttonPost {
+    position: relative;
+    
+}
+
 .welcome{
     font-family: 'Inconsolata', monospace;
     text-align: center;

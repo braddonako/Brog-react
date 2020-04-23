@@ -34,19 +34,20 @@ class AllPosts extends Component {
                 key = {articlePosts._id }>
                     <div className='container'>
                         <div className='homeContainer'>
-                            
                             <div>
                                 <h1 className='postTitle'>{articlePosts.title}</h1>
                                 <p className='postBody'>
                                     {articlePosts.body}
-                                </p>
-                                
+                                </p> 
+                                <button className='buttonPost'  type='button' onClick={(event)=> this.submitForm(event)}>
+                                        Click to see comments
+                                </button>
+                                          
                             </div>
                             <div className='datePosted'>
                                 Date Posted: {articlePosts.date}
                             </div>
-                            
-                        </div>
+                            </div>
                     </div>
                 </div>
             );
