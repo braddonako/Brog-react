@@ -10,7 +10,7 @@ const articleSchema = mongoose.Schema({
     body: {
         required: true,
         type: String,
-        maxlength: 2500
+        maxlength: 50000
     },
     image: {
         type: String

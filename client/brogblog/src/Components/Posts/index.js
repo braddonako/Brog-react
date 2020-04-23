@@ -26,7 +26,7 @@ class AllPosts extends Component {
     
     render() {
             const getLastPost = this.state.articlePosts.map((articlePosts) => {
-                console.log(articlePosts)
+                // console.log(articlePosts)
                 
                 // now I need to return the form below, then I can render it again.. 
             return (

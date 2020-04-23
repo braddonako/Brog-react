@@ -13,34 +13,29 @@ const links = [
     }
 ]
 
-// const admin = [
-//     {
-//         name: 'Add new blog post',
-//         linkTo: 'admin/posts'
-//     }
-// ]
-
 const UserLayout = (props) => {
 
-    const generateLinks = (links) => {
+    const generateLinks = (links) => (
         links.map((item,i)=> (
             <Link to={item.linkTo} key={i}>
                 {item.name}
             </Link>
         ))
-    }
+    )
+    
 
     return (
         <div className='container'>
             <div className='user_container'>
-                <div className='user_left_nav'>    
-                    <div className='links'>
-                        {generateLinks(links)}
+                <div className='user_left_nav'>   
+                    <h2>My Account</h2> 
+                        <div className='links'>
+                            {generateLinks(links)}
+                        </div>
                     </div>
-                </div>
-                <div className='userRight'>
-                    {props.children}
-                </div>
+                    <div className='user_right'>
+                        {props.children}
+                    </div>
             </div>
         </div>
     );
