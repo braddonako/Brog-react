@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import UserLayout from '../../../hoc/user';
 
 import FormField from '../../utils/Forms/formfield';
-import { update, generateData, isFormValid, resetFields } from '../../utils/Forms/formActions';
+import { update, generateData, isFormValid } from '../../utils/Forms/formActions';
 
 import {connect} from 'react-redux';
 import {addPost} from '../../../actions/post_actions'
@@ -89,46 +89,8 @@ class AddPost extends Component {
             formdata: newFormdata
         })
     }
-
-    resetFieldHandler = () => {
-        const newFormData = resetFields(this.state.formData, 'posts')
-
-        this.setState({
-            formdata: newFormData,
-            formSuccess: true
-        })
-        setTimeout(() => {
-            this.setState({
-                formSuccess: false
-            })
-        }, 3000);
-    }
-
-
-    // submitForm= (event) =>{
-    //     event.preventDefault();
-        
-    //     let dataToSubmit = generateData(this.state.formdata,'posts');
-    //     let formIsValid = isFormValid(this.state.formdata,'posts')
-
-    //     if(formIsValid){
-    //           this.props.dispatch(addPost(dataToSubmit)).then(() => {
-    //               if(this.props.posts.addPost.success){
-    //                 this.resetFieldHandler()
-    //               }else{
-    //                 this.setState({
-    //                     formError: true
-    //                 })
-    //               }
-    //           })
-    //         } else {
-    //         this.setState({
-    //             formError: true
-    //         })
-    //     }
-    // }   
-
-        submitForm= (event) =>{
+    
+    submitForm= (event) =>{
         event.preventDefault();
         
         let dataToSubmit = generateData(this.state.formdata,'posts');
