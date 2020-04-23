@@ -17,6 +17,11 @@ class Header extends Component {
                 name:'Posts',
                 linkTo:'/posts',
                 public: true
+            },
+            {
+                name: 'About',
+                linkTo: '/about',
+                public: true
             }
         ],
         user:[

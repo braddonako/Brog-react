@@ -31,7 +31,7 @@ class Home extends Component {
                     <h1 className='welcome'>Welcome to da BROG</h1>
                     <p className='welcomeSub'>All about Coding Bootcamps && JavaScript </p>
                 </div>
-                     <div className = 'page_wrapper'
+                <div className = 'page_wrapper_home'
                 key = {this.state.mostRecentPost._id }>
                     <div className='container'>
                         <div className='homeContainer'>
