@@ -17,11 +17,15 @@ class AllPosts extends Component {
     getAllArticles = () =>{
         // we are fetching the show all blog posts here through axios -- Only admins can access this post 
         Axios.get('/api/articles/show').then(response => {
-            // console.log(response)
+            console.log(response)
             this.setState({
                 articlePosts: response.data
             })
         })
+    }
+
+    showFullPost = () => {
+
     }
     
     render() {
@@ -39,7 +43,7 @@ class AllPosts extends Component {
                                 <p className='postBody'>
                                     {articlePosts.body}
                                 </p> 
-                                <button className='buttonPost'  type='button' onClick={(event)=> this.submitForm(event)}>
+                                <button className='buttonPost'  type='button' onClick={(event)=> this.showFullPost(event)}>
                                         Click to see comments
                                 </button>
                                           

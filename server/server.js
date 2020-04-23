@@ -75,18 +75,10 @@ app.get('/api/articles/showMostRecent', (req,res)=> {
     }).sort({$natural: -1});
 });
 
-// get an article by its id
+// get an article by its id /api/articles/show_by_id
 app.get('/api/articles/show_by_id', (req,res)=>{
-    let type = req.query.type;
+    // let type = req.query.type;
     let items = req.query.id;
-
-    if (type === "array"){
-        let ids = req.query.id.split(',');
-        items = [];
-        items = ids.map(item => {
-            return mongoose.Types.ObjectId(item)
-        })
-    }
 
     Article.find({'_id':{$in:items}}).
     populate('user').
@@ -94,9 +86,6 @@ app.get('/api/articles/show_by_id', (req,res)=>{
         return res.status(200).send(docs)
     })
 })
-
-
-
 
 //===============================
 //         USER ROUTES
