@@ -144,21 +144,14 @@ class AddPost extends Component {
                     });
                     setTimeout(() => {
                             this.props.history.push('/')
-                    }, 3000);
+                    }, 2000);
                 } else{
                     this.setState({formError: true})
-                }
-            }).catch(e=>{
-                this.setState({
-                    formError: true
-                })
-            })
-            } else {
-            this.setState({
-                formError: true
-            })
-        }
+            }
+        })
     }
+}
+    
 
     render() {
         return (
