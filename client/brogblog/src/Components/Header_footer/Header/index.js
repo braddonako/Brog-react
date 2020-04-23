@@ -16,8 +16,8 @@ class Header extends Component {
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
-        
-    }
+        }
+
 
     handleScroll = () => {
         console.log('user scrolling')
@@ -73,7 +73,7 @@ class Header extends Component {
 
                 <SideDrawer 
                     open={this.state.drawerOpen}
-                    onClose={(value) => this.toggleDrawer(value) }
+                    onClose={(value) => this.toggleDrawer(value)}
                 />
                 
                 </div>
