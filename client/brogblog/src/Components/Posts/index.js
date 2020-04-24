@@ -28,7 +28,7 @@ class AllPosts extends Component {
     
     
     render() {
-            const getLastPost = this.state.articlePosts.map((articlePosts, i) => {
+            const showAllPosts = this.state.articlePosts.map((articlePosts, i) => {
                 // console.log(articlePosts._id)
                 // now I need to return the form below, then I can render it again.. 
                 const showMore = () => {
@@ -94,7 +94,7 @@ class AllPosts extends Component {
                     <h1 className='welcome'>All BROG Posts</h1>
                     <p className='welcomeSub'>All about Coding Bootcamps && JavaScript </p>
                 </div>
-                {getLastPost}
+                {showAllPosts}
             </div>
             
         )
