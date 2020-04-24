@@ -113,7 +113,6 @@ class AddPost extends Component {
         })
     }
 }
-    
 
     render() {
         return (
