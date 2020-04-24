@@ -34,8 +34,38 @@ class AllPosts extends Component {
                 const showMore = () => {
                     // console.log(articleId, "articleid")
                     Axios.get('/api/articles/show_by_id?id=' + articlePosts._id)
-                        .then(response => console.log(response))
-                }
+                        .then(response => {
+                            console.log(response)
+                            if (response){
+                                setTimeout(() => {
+                                        this.props.history.push('/articles/show_by_id?id=' + articlePosts._id)
+                                }, 1000);
+                            }
+                        })
+                        return(
+                              <div className = 'page_wrapper'
+                                key = {i}>
+                                    <div className='container'>
+                                        <div className='homeContainer'>
+                                            <div>
+                                                <h1 className='postTitle'>{articlePosts.title}</h1>
+                                                <p className='postBody'>
+                                                    {articlePosts.body}
+                                                </p> 
+                                                <button className='buttonPost' id={articlePosts._id} type='button' onClick={(event)=> showMore(event)}>
+                                                        Click to see comments 
+                                                </button>            
+                                            </div>
+                                            <div className='datePosted'>
+                                                Date Posted: {articlePosts.date}
+                                            </div>
+                                            </div>
+                                    </div>
+                                </div>
+                        )
+                    }
+             
+                
             return (
                 <div className = 'page_wrapper'
                 key = {i}>
