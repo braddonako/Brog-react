@@ -33,6 +33,8 @@ class AllPosts extends Component {
                 // now I need to return the form below, then I can render it again.. 
                 const showMore = () => {
                     // console.log(articleId, "articleid")
+
+                    // might throw this in redux, so I can grab the state at any page. I really have no fuckin idea what is going on, so I am going to take a break. night night
                     Axios.get('/api/articles/show_by_id?id=' + articlePosts._id)
                         .then(response => {
                             console.log(response)
