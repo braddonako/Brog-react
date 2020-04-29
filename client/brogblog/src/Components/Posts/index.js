@@ -78,9 +78,9 @@ class AllPosts extends Component {
                                 <p className='postBody'>
                                     {articlePosts.body}
                                 </p> 
-                                <button className='buttonPost' id={articlePosts._id} type='button' onClick={(event)=> showMore(event)}>
+                                {/* <button className='buttonPost' id={articlePosts._id} type='button' onClick={(event)=> showMore(event)}>
                                         Click to see comments 
-                                </button>            
+                                </button>             */}
                             </div>
                             <div className='datePosted'>
                                 Date Posted: {articlePosts.date}

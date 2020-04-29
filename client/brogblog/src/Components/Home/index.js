@@ -41,9 +41,9 @@ class Home extends Component {
                                 <p className='postBody'>
                                     {this.state.mostRecentPost.body}
                                 </p>
-                                <button className='buttonPost'  type='button' onClick={(event)=> this.submitForm(event)}>
+                                {/* <button className='buttonPost'  type='button' onClick={(event)=> this.submitForm(event)}>
                                         Click to see comments
-                                </button>
+                                </button> */}
                                 
                             </div>
                             <div className='datePosted'>
