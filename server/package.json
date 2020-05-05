@@ -5,6 +5,13 @@
   "main": "server.js",
   "engines": {
     "node": "12.11.1"
+  }, 
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js",
+    "server": "nodemon server/server.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
     "bcrypt": "^4.0.1",
@@ -18,13 +25,7 @@
     "mongoose": "^5.9.7",
     "nodemon": "^2.0.2"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/server.js",
-    "server": "nodemon server/server.js",
-    "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
-  },
+  
   "author": "",
   "license": "ISC"
 }

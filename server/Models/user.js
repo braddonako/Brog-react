@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const SALT_I = 10; // We are salting the password
 // const Schema = mongoose.Schema;
 
-// require('dotenv').config()
+// require('dotenv').config();
 
 const userSchema = mongoose.Schema({
     email:{

@@ -24,8 +24,6 @@ class AllPosts extends Component {
             })
         })
     }
-
-    
     
     render() {
             const showAllPosts = this.state.articlePosts.map((articlePosts, i) => {
@@ -40,7 +38,7 @@ class AllPosts extends Component {
                             console.log(response)
                             if (response){
                                 setTimeout(() => {
-                                        this.props.history.push('/articles/show_by_id?id=' + articlePosts._id)
+                                        this.props.history.push('/posts/show_by_id?id=' + articlePosts._id)
                                 }, 1000);
                             }
                         })
@@ -54,9 +52,9 @@ class AllPosts extends Component {
                                                 <p className='postBody'>
                                                     {articlePosts.body}
                                                 </p> 
-                                                <button className='buttonPost' id={articlePosts._id} type='button' onClick={(event)=> showMore(event)}>
+                                                {/* <button className='buttonPost' id={articlePosts._id} type='button' onClick={(event)=> showMore(event)}>
                                                         Click to see comments 
-                                                </button>            
+                                                </button>             */}
                                             </div>
                                             <div className='datePosted'>
                                                 Date Posted: {articlePosts.date}
@@ -78,9 +76,9 @@ class AllPosts extends Component {
                                 <p className='postBody'>
                                     {articlePosts.body}
                                 </p> 
-                                {/* <button className='buttonPost' id={articlePosts._id} type='button' onClick={(event)=> showMore(event)}>
+                                <button className='buttonPost' id={articlePosts._id} type='button' onClick={(event)=> showMore(event)}>
                                         Click to see comments 
-                                </button>             */}
+                                </button>            
                             </div>
                             <div className='datePosted'>
                                 Date Posted: {articlePosts.date}

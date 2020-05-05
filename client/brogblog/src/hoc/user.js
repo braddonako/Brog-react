@@ -22,7 +22,6 @@ const links = [
             name: 'Site Info',
             linkTo: '/admin/site_info'
         }
-        
     ]
 
 const UserLayout = (props) => {
@@ -35,8 +34,6 @@ const UserLayout = (props) => {
         ))
     )
     
-
-
     return (
         <div className='container'>
             <div className='user_container'>

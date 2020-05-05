@@ -92,9 +92,11 @@ class AddPost extends Component {
     
     submitForm= (event) =>{
         event.preventDefault();
+        console.log('click click')
         
         let dataToSubmit = generateData(this.state.formdata,'posts');
-        let formIsValid = isFormValid(this.state.formdata,'posts')
+        let formIsValid = isFormValid(this.state.formdata,'posts');
+        console.log(dataToSubmit)
 
         if(formIsValid){
             this.props.dispatch(addPost(dataToSubmit))

@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 
 class ShowPost extends Component {
 
-    
+    componentDidMount(){
+        
+    }
 
     render() {
         return (

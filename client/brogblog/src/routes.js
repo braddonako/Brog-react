@@ -9,9 +9,9 @@ import About from './Components/About';
 import Register from  './Components/Register_login/register';
 import AllPosts from './Components/Posts';
 import AddPost from './Components/User/Admin/add_post';
-import ShowPost from './Components/Posts/showPost'
+import ShowPost from './Components/Posts/showPost';
 
-import UserDashboard from './Components/User'
+import UserDashboard from './Components/User';
 
 const Routes = () => {
   return(
@@ -20,7 +20,7 @@ const Routes = () => {
         <Route path='/user/dashboard' exact component={ Auth(UserDashboard, true) }/>
         <Route path='/admin/add_post' exact component={ Auth(AddPost, true) }/>
 
-        <Route path='/articles/show_by_id?_id' exact component={Auth(ShowPost, false) } />
+        <Route path='/posts/show_by_id?_id' exact component={Auth(ShowPost, false) } />
         <Route path='/register_login' exact component={ Auth(RegisterLogin, false) }/>
         <Route path='/register' exact component={ Auth(Register, false) }/>
         <Route path='/' exact component={ Auth(Home, null) }/>
