@@ -2,17 +2,10 @@
 
 import React from 'react';
 
-const showPost = (props) => {
-    
-
-    const clickedPost = props.onePost.map((onePost) => {
-        console.log(onePost)
-        console.log(onePost.title)
-    })
-
+const showPost = () => {
     return (
         <div>
-            {clickedPost}
+            a ha ha
         </div>
     );
 };

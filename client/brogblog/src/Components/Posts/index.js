@@ -28,7 +28,7 @@ class AllPosts extends Component {
     // show one more post -- this will be very similar to how I did add a post... Should be easy to do, just need to grab it by it's id
     // create a function that will request the post by its id
     // create an initial state up top with each field I am looking for 
-
+          
     
     render() {
             const showAllPosts = this.state.articlePosts.map((articlePosts, i) => {

@@ -66,7 +66,7 @@ app.get('/api/articles/show', (req,res)=>{
     }).sort({$natural: -1})
 })
 
-// get one article -- for the home page. this is tight
+// get the most recent article for the home page. this is tight
 
 app.get('/api/articles/showMostRecent', (req,res)=> {
     Article.findOne({}, (err, article)=>{
