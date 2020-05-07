@@ -24,6 +24,11 @@ class AllPosts extends Component {
             })
         })
     }
+
+    // show one more post -- this will be very similar to how I did add a post... Should be easy to do, just need to grab it by it's id
+    // create a function that will request the post by its id
+    // create an initial state up top with each field I am looking for 
+
     
     render() {
             const showAllPosts = this.state.articlePosts.map((articlePosts, i) => {
@@ -42,29 +47,7 @@ class AllPosts extends Component {
                                 }, 1000);
                             }
                         })
-                        return(
-                              <div className = 'page_wrapper'
-                                key = {i}>
-                                    <div className='container'>
-                                        <div className='homeContainer'>
-                                            <div>
-                                                <h1 className='postTitle'>{articlePosts.title}</h1>
-                                                <p className='postBody'>
-                                                    {articlePosts.body}
-                                                </p> 
-                                                {/* <button className='buttonPost' id={articlePosts._id} type='button' onClick={(event)=> showMore(event)}>
-                                                        Click to see comments 
-                                                </button>             */}
-                                            </div>
-                                            <div className='datePosted'>
-                                                Date Posted: {articlePosts.date}
-                                            </div>
-                                            </div>
-                                    </div>
-                                </div>
-                        )
-                    }
-             
+            }
                 
             return (
                 <div className = 'page_wrapper'
@@ -85,8 +68,7 @@ class AllPosts extends Component {
                             </div>
                             </div>
                     </div>
-                </div>
-            );
+                </div> );
         })
         return(
             <div>

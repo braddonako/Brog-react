@@ -1,18 +1,20 @@
-import React, { Component } from 'react';
+// articlePosts
 
-class ShowPost extends Component {
+import React from 'react';
 
-    componentDidMount(){
-        
-    }
+const showPost = (props) => {
+    
 
-    render() {
-        return (
-            <div>
-                a ha ha
-            </div>
-        );
-    }
-}
+    const clickedPost = props.onePost.map((onePost) => {
+        console.log(onePost)
+        console.log(onePost.title)
+    })
 
-export default ShowPost;
+    return (
+        <div>
+            {clickedPost}
+        </div>
+    );
+};
+
+export default showPost;
