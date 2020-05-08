@@ -29,14 +29,13 @@ class Home extends Component {
         return(
             <div>
                 <div>
-                    <h1 className='welcome'>Welcome to da BROG}</h1>
+                    <h1 className='welcome'>Welcome to da BROG</h1>
                     <p className='welcomeSub'>All about Coding Bootcamps && JavaScript </p>
                 </div>
                 <div className = 'page_wrapper_home'
-                key = {this.state.mostRecentPost._id }>
+                key = {this.state.mostRecentPost._id}>
                     <div className='container'>
-                        <div className='homeContainer'>
-                            
+                        <div className='homeContainer'>                            
                             <div>
                                 <h1 className='postTitle'>{this.state.mostRecentPost.title}</h1>
                                 <p className='postBody'>
@@ -53,8 +52,7 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
-            
+            </div>  
         )
     }
 }

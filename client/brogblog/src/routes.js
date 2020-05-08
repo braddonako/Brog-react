@@ -10,6 +10,7 @@ import Register from  './Components/Register_login/register';
 import AllPosts from './Components/Posts';
 import AddPost from './Components/User/Admin/add_post';
 import showPost from './Components/Posts/showPost';
+import Logout from './Components/Logout/logout'
 
 import UserDashboard from './Components/User';
 
@@ -25,7 +26,8 @@ const Routes = () => {
         <Route path='/register' exact component={ Auth(Register, false) }/>
         <Route path='/' exact component={ Auth(Home, null) }/>
         <Route path='/about' exact component={Auth(About, null)}/>
-        <Route path='/posts' exact component={Auth (AllPosts, null)} />>
+        <Route path='/posts' exact component={Auth (AllPosts, null)} />
+        <Route path='/logout' exact component={Auth (Logout, null)} />
       </Switch>
     </Layout>
     
