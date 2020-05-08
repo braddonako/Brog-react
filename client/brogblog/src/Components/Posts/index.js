@@ -73,10 +73,9 @@ class AllPosts extends Component {
         return(
             <div>
                 <div>
-                    {/* <h1 className='welcome'>All BROG Posts</h1>
-                    <p className='welcomeSub'>All about Coding Bootcamps && JavaScript </p> */}
+                    {showAllPosts}
                 </div>
-                {showAllPosts}
+                
             </div>
             
         )
