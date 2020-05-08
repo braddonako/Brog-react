@@ -155,11 +155,9 @@ if(process.env.NODE_ENV === 'production'){
     const path = require('path');
 
     app.get('/*', (req, res) =>{
-        res.sendFile(path.resolve(__dirname, '/client/brogblog/public', 'index.html'))
+        res.sendFile(path.resolve(__dirname, '/client/brogblog', 'index.js'))
     })
 }
-
-// ./client/brogblog/build/js', 'index.html'
 
 const PORT = process.env.PORT || 3002;
 
