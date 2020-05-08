@@ -155,7 +155,7 @@ if(process.env.NODE_ENV === 'production'){
     const path = require('path');
 
     app.get('*', (req, res) =>{
-        res.sendfile(path.resolve(__dirname, '../client', 'index.html'))
+        res.sendfile(path.resolve(__dirname, '../client/public', 'index.html'))
     })
 }
 
