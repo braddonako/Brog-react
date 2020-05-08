@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.use(express.static('client/build'))
+
 
 //===============================
 //           MODELS
@@ -153,8 +153,9 @@ app.get('/api/users/logout', auth, (req,res)=>{
 
 if(process.env.NODE_ENV === 'production'){
     const path = require('path');
+    app.use(express.static('client/brogblog/build'))
 
-    app.get('/*', (req, res) =>{
+    app.get('*', (req, res) =>{
         res.sendFile(path.resolve(__dirname, '../client/brogblog/build', 'index.html'))
     })
 }
