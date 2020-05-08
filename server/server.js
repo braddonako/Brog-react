@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASE, {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
@@ -20,6 +20,8 @@ mongoose.connect(process.env.DATABASE, {
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
+
+app.use(express.static('client/build'))
 
 //===============================
 //           MODELS
@@ -148,6 +150,14 @@ app.get('/api/users/logout', auth, (req,res)=>{
     }
     )
 })
+
+if(process.env.NODE_ENV === 'production'){
+    const path = require('path');
+
+    app.get('/*', (req, res) =>{
+        res.sendfile(path.resolve(__dirname, '../client', 'build', 'index.html'))
+    })
+}
 
 const port = process.env.PORT || 3002;
 
