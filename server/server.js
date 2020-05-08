@@ -158,7 +158,7 @@ if(process.env.NODE_ENV === 'production'){
     //     app.use(express.static('client/build'))
     //     res.sendFile(path.join(__dirname, '../client/brogblog','build', 'index.html'))
     // })
-    const root = require('path').join(__dirname, '/client/brogblog', 'build')
+    const root = require('path').join(__dirname, '../client/brogblog', 'build')
     app.use(express.static(root));
     app.get("*", (req, res) => {
         res.sendFile('index.html', {
