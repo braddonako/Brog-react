@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-// import { connect } from 'http2';
 
 class AllPosts extends Component {
 
@@ -68,7 +67,8 @@ class AllPosts extends Component {
                             </div>
                             </div>
                     </div>
-                </div> );
+                </div> 
+            );
         })
         return(
             <div>

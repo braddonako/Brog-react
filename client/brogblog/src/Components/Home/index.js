@@ -25,10 +25,11 @@ class Home extends Component {
     }
     
     render() {
+
         return(
             <div>
                 <div>
-                    <h1 className='welcome'>Welcome to da BROG</h1>
+                    <h1 className='welcome'>Welcome to da BROG}</h1>
                     <p className='welcomeSub'>All about Coding Bootcamps && JavaScript </p>
                 </div>
                 <div className = 'page_wrapper_home'

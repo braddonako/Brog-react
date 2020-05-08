@@ -16,7 +16,7 @@ class Header extends Component {
             {
                 name:'Posts',
                 linkTo:'/posts',
-                public: true
+                public: false
             },
             {
                 name: 'About',
