@@ -152,11 +152,18 @@ app.get('/api/users/logout', auth, (req,res)=>{
 })
 
 if(process.env.NODE_ENV === 'production'){
-    const path = require('path');
+    // const path = require('path');
     
-    app.get('/*', (req, res) =>{
-        app.use(express.static('client/build'))
-        res.sendFile(path.join(__dirname, '../client/brogblog','build', 'index.html'))
+    // app.get('/*', (req, res) =>{
+    //     app.use(express.static('client/build'))
+    //     res.sendFile(path.join(__dirname, '../client/brogblog','build', 'index.html'))
+    // })
+    const root = require('path').join(__dirname, '/client/brogblog', 'build')
+    app.use(express.static(root));
+    app.get("*", (req, res) => {
+        res.sendFile('index.html', {
+            root
+        });
     })
 }
 
