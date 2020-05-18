@@ -16,7 +16,7 @@ class Header extends Component {
             {
                 name:'Posts',
                 linkTo:'/posts',
-                public: false
+                public: true
             },
             {
                 name: 'About',
@@ -46,7 +46,7 @@ class Header extends Component {
     logoutHandler = () =>{
         this.props.dispatch(logoutUser()).then(response => {
             if(response.payload.success){
-                this.props.history.push('/logout')
+                this.props.history.push('/')
             }
         })
     }

@@ -144,6 +144,7 @@ header a {
 
 header .container {
     display: flex;
+    
 }
 
 header .container .left {
@@ -486,6 +487,7 @@ h2 {
   max-width: 0 auto;
   height: 800px;
   margin-top: 0;
+  padding: 100px;
 }
 
 .carousel-inner {
