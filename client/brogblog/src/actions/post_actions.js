@@ -1,9 +1,7 @@
 import axios from 'axios';
 
 import { ADD_POST, GET_ALL_POSTS } from './types';
-import {
-    ARTICLES_SERVER
-} from '../Components/utils/misc';
+import { ARTICLES_SERVER } from '../Components/utils/misc';
 
 export function addPost(datatoSubmit) {
 
