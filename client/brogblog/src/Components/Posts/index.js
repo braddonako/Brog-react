@@ -33,20 +33,20 @@ class AllPosts extends Component {
             const showAllPosts = this.state.articlePosts.map((articlePosts, i) => {
                 // console.log(articlePosts._id)
                 // now I need to return the form below, then I can render it again.. 
-                const showMore = () => {
-                    // console.log(articleId, "articleid")
+            //     const showMore = () => {
+            //         // console.log(articleId, "articleid")
 
-                    // might throw this in redux, so I can grab the state at any page. I really have no fuckin idea what is going on, so I am going to take a break. night night
-                    Axios.get('/api/articles/show_by_id?id=' + articlePosts._id)
-                        .then(response => {
-                            console.log(response)
-                            if (response){
-                                setTimeout(() => {
-                                        this.props.history.push('/posts/show_by_id?id=' + articlePosts._id)
-                                }, 1000);
-                            }
-                        })
-            }
+            //         // might throw this in redux, so I can grab the state at any page. I really have no fuckin idea what is going on, so I am going to take a break. night night
+            //         Axios.get('/api/articles/show_by_id?id=' + articlePosts._id)
+            //             .then(response => {
+            //                 console.log(response)
+            //                 if (response){
+            //                     setTimeout(() => {
+            //                             this.props.history.push('/posts/show_by_id?id=' + articlePosts._id)
+            //                     }, 1000);
+            //                 }
+            //             })
+            // }
                 
             return (
                 <div className = 'page_wrapper'
@@ -58,9 +58,7 @@ class AllPosts extends Component {
                                 <p className='postBody'>
                                     {articlePosts.body}
                                 </p> 
-                                {/* <button className='buttonPost' id={articlePosts._id} type='button' onClick={(event)=> showMore(event)}>
-                                        Click to see comments 
-                                </button>             */}
+                                
                             </div>
                             <div className='datePosted'>
                                 Date Posted: {articlePosts.date}

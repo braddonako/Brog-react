@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGODB_URI, {
     useCreateIndex: true
 });
 
-// console.log(process.env.DATABASE, '<-- here is the database ahaha')
+console.log(process.env.MONGODB_URI, '<-- here is the database ahaha')
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());

@@ -9,7 +9,7 @@ import {
 import { USER_SERVER } from '../Components/utils/misc';
 
 export function registerUser(dataToSubmit){
-    const request = axios.post(`${USER_SERVER}/register`, dataToSubmit)
+    const request = axios.post(`127.0.0.1/api/users/register`, dataToSubmit)
         .then(response => response.data);
         return {
             type: REGISTER_USER,
